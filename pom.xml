@@ -408,8 +408,8 @@
             </dependency>
             <dependency>
                 <groupId>com.aliyun.openservices</groupId>
-                <artifactId>ons-api</artifactId>
-                <version>${ons-api-version}</version>
+                <artifactId>ons-client</artifactId>
+                <version>1.2.7.Final</version>
             </dependency>
             <!-- validation -->
             <dependency>

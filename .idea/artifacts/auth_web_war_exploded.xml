@@ -101,7 +101,7 @@
           <element id="library" level="project" name="Maven: net.sf.json-lib:json-lib:jdk15:2.4" />
           <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.1" />
           <element id="library" level="project" name="Maven: net.sf.ezmorph:ezmorph:1.0.6" />
-          <element id="library" level="project" name="Maven: com.aliyun.openservices:ons-api:1.1.11" />
+          <element id="library" level="project" name="Maven: com.aliyun.openservices:ons-client:1.2.7.Final" />
           <element id="library" level="project" name="Maven: javax.validation:validation-api:1.0.0.GA" />
           <element id="archive" name="auth-service-1.0-SNAPSHOT.jar">
             <element id="module-output" name="auth-service" />

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="producer" class="com.aliyun.openservices.ons.api.bean.ProducerBean"
+        init-method="start" destroy-method="shutdown">
+        <property name="properties">
+            <map>
+                <entry key="ProducerId" value="${mq.PRODUCER_ID}" /> <!-- PID,请替换 -->
+                <entry key="AccessKey" value="${mq.ACCESS_KEY}" /> <!-- ACCESS_KEY,请替换 -->
+                <entry key="SecretKey" value="${mq.SECRET_KEY}" /> <!-- SECRET_KEY,请替换 -->
+                <!--PropertyKeyConst.ONSAddr 请根据不同Region进行配置
+                 公网测试: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+                 公有云生产: http://onsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
+                 杭州金融云: http://jbponsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
+                 深圳金融云: http://mq4finance-sz.addr.aliyun.com:8080/rocketmq/nsaddr4client-internal -->
+                <entry key="ONSAddr" value="${mq.ONSADDR}"/>
+            </map>
+        </property>
+    </bean>
+</beans>
