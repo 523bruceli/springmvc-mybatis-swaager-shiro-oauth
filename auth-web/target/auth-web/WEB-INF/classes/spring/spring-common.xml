@@ -36,6 +36,4 @@
 
     <!-- 导入xml配置文件 -->
      <import resource="classpath:spring/spring-redis.xml" />
-     <import resource="classpath:spring/spring-consumer-light.xml" />
-
 </beans>

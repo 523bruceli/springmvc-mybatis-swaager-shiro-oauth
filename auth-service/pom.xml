@@ -11,5 +11,11 @@
 
     <artifactId>auth-service</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.hjzgg</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

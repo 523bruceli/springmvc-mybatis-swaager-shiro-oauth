@@ -12,6 +12,8 @@
         <module>auth-service</module>
         <module>auth-web</module>
         <module>common</module>
+        <module>bq-codegenerate</module>
+        <module>auth-client</module>
     </modules>
 
     <properties>
