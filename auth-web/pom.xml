@@ -16,6 +16,7 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>com.hjzgg</groupId>
             <artifactId>common</artifactId>
@@ -44,6 +45,11 @@
             </exclusions>
         </dependency>
         <!--end swagger-mvc -->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
 
     </dependencies>
 

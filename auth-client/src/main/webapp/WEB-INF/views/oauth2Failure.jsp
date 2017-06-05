@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title>认证失败</title>
+</head>
+<body>
+<center>
+    <h1>
+        认证失败
+    </h1>
+</center>
+</body>
+</html>

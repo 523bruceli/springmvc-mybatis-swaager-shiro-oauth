@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/auth-client/auth-client.iml" filepath="$PROJECT_DIR$/auth-client/auth-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-service/auth-service.iml" filepath="$PROJECT_DIR$/auth-service/auth-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-web/auth-web.iml" filepath="$PROJECT_DIR$/auth-web/auth-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bq-codegenerate/bq-codegenerate.iml" filepath="$PROJECT_DIR$/bq-codegenerate/bq-codegenerate.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/oauth2.iml" filepath="$PROJECT_DIR$/oauth2.iml" />
     </modules>

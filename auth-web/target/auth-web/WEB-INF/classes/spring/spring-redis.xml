@@ -33,7 +33,7 @@
         </constructor-arg>
     </bean>
 
-    <bean id="redisUtil" class="com.hjzgg.util.RedisUtil">
+    <bean id="redisUtil" class="com.hjzgg.auth.util.RedisUtil">
         <property name="shardedJedisPool" ref="shardedJedisPool"/>
     </bean>
 </beans>

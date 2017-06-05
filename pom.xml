@@ -12,6 +12,8 @@
         <module>auth-service</module>
         <module>auth-web</module>
         <module>common</module>
+        <module>bq-codegenerate</module>
+        <module>auth-client</module>
     </modules>
 
     <properties>
@@ -63,6 +65,7 @@
         <aliyun-sdk-oss-vereson>2.4.0</aliyun-sdk-oss-vereson>
         <ons-api-version>1.1.11</ons-api-version>
         <validation-api-version>1.0.0.GA</validation-api-version>
+        <shiro-version>1.3.2</shiro-version>
     </properties>
 
     <distributionManagement>
@@ -122,6 +125,11 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
+                <version>${spring-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
                 <version>${spring-version}</version>
             </dependency>
             <dependency>
@@ -417,7 +425,32 @@
                 <artifactId>validation-api</artifactId>
                 <version>${validation-api-version}</version>
             </dependency>
-
+            <!-- shiro -->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-core</artifactId>
+                <version>${shiro-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-core</artifactId>
+                <version>${shiro-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-ehcache</artifactId>
+                <version>${shiro-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-web</artifactId>
+                <version>${shiro-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>${shiro-version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
