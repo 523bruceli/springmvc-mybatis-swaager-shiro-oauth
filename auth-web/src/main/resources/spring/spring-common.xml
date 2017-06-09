@@ -22,6 +22,46 @@
     <mvc:default-servlet-handler />
     <mvc:resources mapping="/swaager/**" location="/WEB-INF/swaager/"/>
 
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper">
+                    <bean class="com.fasterxml.jackson.databind.ObjectMapper">
+                        <!-- 处理responseBody 里面日期类型 -->
+                        <!--   <property name="dateFormat">
+                              <bean class="java.text.SimpleDateFormat">
+                                  <constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss" />
+                              </bean>
+                          </property>  -->
+                        <!-- 为null字段时不显示 -->
+                        <property name="serializationInclusion">
+                            <value type="com.fasterxml.jackson.annotation.JsonInclude.Include">NON_NULL</value>
+                        </property>
+                        <property name="propertyNamingStrategy">
+                            <!--<bean class="com.hjzgg.common.serializer.MyPropertyNamingStrategyBase" />-->
+                            <bean class="com.fasterxml.jackson.databind.PropertyNamingStrategy.LowerCaseWithUnderscoresStrategy" />
+                        </property>
+                    </bean>
+                </property>
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/html;charset=UTF-8</value>
+                        <value>application/json; charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+            <!-- 解决 json串 中文乱码问题-->
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg value="UTF-8" index="0"/>
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/plain;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
     <!-- 3.配置SpringMVC的视图解析器 -->
     <!-- 其viewClass属性的默认值就是org.springframewutil.web.servlet.view.JstlView -->
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

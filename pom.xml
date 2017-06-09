@@ -63,6 +63,7 @@
         <aliyun-sdk-oss-vereson>2.4.0</aliyun-sdk-oss-vereson>
         <ons-api-version>1.1.11</ons-api-version>
         <validation-api-version>1.0.0.GA</validation-api-version>
+        <validation-validator-version>4.3.1.Final</validation-validator-version>
     </properties>
 
     <distributionManagement>
@@ -417,7 +418,11 @@
                 <artifactId>validation-api</artifactId>
                 <version>${validation-api-version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${validation-validator-version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
