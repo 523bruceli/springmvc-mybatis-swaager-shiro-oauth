@@ -21,6 +21,4 @@ public interface LightUserDao {
     @Select("select * from light_user where client_id=#{clientId}")
     @ResultMap(value = "BaseResultMap")
     LightUser findByClientId(String clientId);
-
-
 }

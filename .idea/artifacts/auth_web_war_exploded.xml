@@ -116,6 +116,8 @@
           <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.1.0" />
           <element id="library" level="project" name="Maven: com.mangofactory:swagger-models:1.0.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-test:4.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">

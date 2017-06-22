@@ -4,7 +4,7 @@
 </head>
 <body>
 <center>
-    <form action="login" method="post">
+    <form action="login.jsp" method="post">
         username: <input type="text" name="username" /><br/>
         password: <input type="password" name="password"><br/>
         auto login: <input type="checkbox" name="rememberMe" value="true"><br/>
