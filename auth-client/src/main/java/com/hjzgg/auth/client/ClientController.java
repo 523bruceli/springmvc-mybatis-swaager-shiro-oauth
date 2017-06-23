@@ -25,6 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("client")
+@Deprecated
 public class ClientController {
     @RequestMapping("authority")
     @ResponseBody
