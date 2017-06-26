@@ -34,7 +34,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -84,8 +83,8 @@ public class OAuthController {
 
             Subject subject = SecurityUtils.getSubject();
             //如果用户没有登录，跳转到登陆页面
-            if(!subject.isAuthenticated()) {
-                if(!login(subject, request)) {//登录失败时跳转到登陆页面
+            if (!subject.isAuthenticated()) {
+                if (!login(subject, request)) {//登录失败时跳转到登陆页面
                     HttpHeaders headers = new HttpHeaders();
                     headers.setLocation(new URI("/login.jsp"));
                     return new ResponseEntity(headers, HttpStatus.TEMPORARY_REDIRECT);
@@ -118,7 +117,7 @@ public class OAuthController {
             HttpHeaders headers = new HttpHeaders();
             headers.setLocation(new URI(response.getLocationUri()));
             return new ResponseEntity(headers, HttpStatus.valueOf(response.getResponseStatus()));
-        }  catch (OAuthProblemException e) {
+        } catch (OAuthProblemException e) {
             //出错处理
             String redirectUri = e.getRedirectUri();
             if (OAuthUtils.isEmpty(redirectUri)) {
@@ -133,19 +132,19 @@ public class OAuthController {
             HttpHeaders headers = new HttpHeaders();
             headers.setLocation(new URI(response.getLocationUri()));
             return new ResponseEntity(headers, HttpStatus.valueOf(response.getResponseStatus()));
-        }  catch (Exception e) {
+        } catch (Exception e) {
             return new ResponseEntity("内部错误", HttpStatus.valueOf(HttpServletResponse.SC_INTERNAL_SERVER_ERROR));
         }
     }
 
     private boolean login(Subject subject, HttpServletRequest request) {
-        if("get".equalsIgnoreCase(request.getMethod())) {
+        if ("get".equalsIgnoreCase(request.getMethod())) {
             return false;
         }
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        if(StringUtils.isEmpty(username) || StringUtils.isEmpty(password)) {
+        if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)) {
             return false;
         }
 
