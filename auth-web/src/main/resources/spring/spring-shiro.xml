@@ -107,12 +107,12 @@
         <property name="filterChainDefinitions">
             <value>
                 /logout = logout
-
+                /login.jsp = authc
                 /oauth/authorize=anon
                 /oauth/accessToken=anon
                 /oauth/userInfo=anon
 
-                /** = authc
+                /** = roles[admin]
             </value>
         </property>
     </bean>

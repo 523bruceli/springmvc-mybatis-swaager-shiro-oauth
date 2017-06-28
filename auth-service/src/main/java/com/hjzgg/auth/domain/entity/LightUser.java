@@ -13,6 +13,8 @@ public class LightUser {
 
     private String clientSecret;
 
+    private String role;
+
     public Integer getUserId() {
         return userId;
     }
@@ -61,6 +63,14 @@ public class LightUser {
         this.clientSecret = clientSecret == null ? null : clientSecret.trim();
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role == null ? null : role.trim();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -73,6 +83,7 @@ public class LightUser {
         sb.append(", salt=").append(salt);
         sb.append(", clientId=").append(clientId);
         sb.append(", clientSecret=").append(clientSecret);
+        sb.append(", role=").append(role);
         sb.append("]");
         return sb.toString();
     }

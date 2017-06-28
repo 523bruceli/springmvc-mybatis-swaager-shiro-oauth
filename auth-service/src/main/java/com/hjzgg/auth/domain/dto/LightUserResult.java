@@ -16,6 +16,16 @@ public class LightUserResult implements Serializable {
 
     private String clientSecret;
 
+    private String role;
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     public Long getUserId() {
         return userId;
     }

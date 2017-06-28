@@ -8,9 +8,10 @@
         <result column="salt" property="salt" jdbcType="VARCHAR"/>
         <result column="client_id" property="clientId" jdbcType="VARCHAR"/>
         <result column="client_secret" property="clientSecret" jdbcType="VARCHAR"/>
+        <result column="role" property="role" jdbcType="VARCHAR"/>
     </resultMap>
     <sql id="Base_Column_List">
-    user_id, user_name, password, salt, client_id, client_secret
+    user_id, user_name, password, salt, client_id, client_secret, role
   </sql>
 
     <select id="findUserByName" resultMap="BaseResultMap" parameterType="java.lang.String">
@@ -32,9 +33,11 @@
             SELECT LAST_INSERT_ID()
         </selectKey>
         insert into light_user (user_name, password, salt,
-        client_id, client_secret)
+        client_id, client_secret, role
+        )
         values (#{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR},
-        #{clientId,jdbcType=VARCHAR}, #{clientSecret,jdbcType=VARCHAR})
+        #{clientId,jdbcType=VARCHAR}, #{clientSecret,jdbcType=VARCHAR}, #{role,jdbcType=VARCHAR}
+        )
     </insert>
     <insert id="insertSelective" parameterType="com.hjzgg.auth.domain.entity.LightUser">
         <selectKey resultType="java.lang.Integer" keyProperty="userId" order="AFTER">
@@ -57,6 +60,9 @@
             <if test="clientSecret != null">
                 client_secret,
             </if>
+            <if test="role != null">
+                role,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="userName != null">
@@ -73,6 +79,9 @@
             </if>
             <if test="clientSecret != null">
                 #{clientSecret,jdbcType=VARCHAR},
+            </if>
+            <if test="role != null">
+                #{role,jdbcType=VARCHAR},
             </if>
         </trim>
     </insert>
@@ -94,16 +103,20 @@
             <if test="clientSecret != null">
                 client_secret = #{clientSecret,jdbcType=VARCHAR},
             </if>
+            <if test="role != null">
+                role = #{role,jdbcType=VARCHAR},
+            </if>
         </set>
         where user_id = #{userId,jdbcType=INTEGER}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.hjzgg.auth.domain.entity.LightUser">
     update light_user
     set user_name = #{userName,jdbcType=VARCHAR},
-    password = #{password,jdbcType=VARCHAR},
-    salt = #{salt,jdbcType=VARCHAR},
-    client_id = #{clientId,jdbcType=VARCHAR},
-    client_secret = #{clientSecret,jdbcType=VARCHAR}
+      password = #{password,jdbcType=VARCHAR},
+      salt = #{salt,jdbcType=VARCHAR},
+      client_id = #{clientId,jdbcType=VARCHAR},
+      client_secret = #{clientSecret,jdbcType=VARCHAR},
+      role = #{role,jdbcType=VARCHAR}
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
 </mapper>

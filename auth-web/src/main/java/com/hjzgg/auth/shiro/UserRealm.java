@@ -11,6 +11,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
+import java.util.HashSet;
 
 /**
  * <p>Version: 1.0
@@ -23,8 +25,10 @@ public class UserRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         String username = (String)principals.getPrimaryPrincipal();
+        LightUserResult user = userApi.queryUserByName(username);
 
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
+        authorizationInfo.setRoles(new HashSet<>(Arrays.asList(user.getRole())));
         //暂时不加权限
         return authorizationInfo;
     }
