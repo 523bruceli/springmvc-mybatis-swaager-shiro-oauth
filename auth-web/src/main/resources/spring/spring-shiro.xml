@@ -108,9 +108,9 @@
             <value>
                 /logout = logout
 
-                /authorize=anon
-                /accessToken=anon
-                /userInfo=anon
+                /oauth/authorize=anon
+                /oauth/accessToken=anon
+                /oauth/userInfo=anon
 
                 /** = authc
             </value>

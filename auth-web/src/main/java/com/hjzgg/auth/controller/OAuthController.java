@@ -68,6 +68,10 @@ public class OAuthController {
             // 构建OAuth授权请求
             OAuthAuthzRequest oauthRequest = new OAuthAuthzRequest(request);
 
+            //得到到客户端重定向地址
+            String responseType = oauthRequest.getParam(OAuth.OAUTH_RESPONSE_TYPE);
+            String redirectURI = oauthRequest.getParam(OAuth.OAUTH_REDIRECT_URI);
+
             // 1.获取OAuth客户端id
             String clientId = oauthRequest.getClientId();
             // 校验客户端id是否正确
@@ -86,14 +90,17 @@ public class OAuthController {
             if (!subject.isAuthenticated()) {
                 if (!login(subject, request)) {//登录失败时跳转到登陆页面
                     HttpHeaders headers = new HttpHeaders();
-                    headers.setLocation(new URI("/login.jsp"));
+                    headers.setLocation(new URI(request.getContextPath() + "/login.jsp?"
+                            + OAuth.OAUTH_REDIRECT_URI + "=" + redirectURI
+                            + "&" + OAuth.OAUTH_RESPONSE_TYPE + "=" + responseType
+                            + "&" + OAuth.OAUTH_CLIENT_ID + "=" + clientId)
+                    );
                     return new ResponseEntity(headers, HttpStatus.TEMPORARY_REDIRECT);
                 }
             }
 
             // 2.生成授权码
             String authCode = null;
-            String responseType = oauthRequest.getParam(OAuth.OAUTH_RESPONSE_TYPE);
             // ResponseType仅支持CODE和TOKEN
             if (responseType.equals(ResponseType.CODE.toString())) {
                 OAuthIssuerImpl oAuthIssuer = new OAuthIssuerImpl(new MD5Generator());
@@ -108,8 +115,6 @@ public class OAuthController {
                             HttpServletResponse.SC_FOUND);
             //设置授权码
             builder.setCode(authCode);
-            //得到到客户端重定向地址
-            String redirectURI = oauthRequest.getParam(OAuth.OAUTH_REDIRECT_URI);
 
             //构建响应
             final OAuthResponse response = builder.location(redirectURI).buildQueryMessage();

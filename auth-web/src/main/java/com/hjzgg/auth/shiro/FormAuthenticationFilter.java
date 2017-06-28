@@ -3,6 +3,9 @@ package com.hjzgg.auth.shiro;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.oltu.oauth2.common.OAuth;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.subject.Subject;
@@ -112,6 +115,10 @@ public class FormAuthenticationFilter extends AuthenticatingFilter {
     }
 
     protected boolean onLoginSuccess(AuthenticationToken token, Subject subject, ServletRequest request, ServletResponse response) throws Exception {
+        if(StringUtils.isNotEmpty(this.getResponseType(request)) && StringUtils.isNotEmpty(this.getRedirectURI(request))) {
+            String authorizeURI = "/oauth/authorize?";
+            this.setSuccessUrl(authorizeURI + ((HttpServletRequest)request).getQueryString());
+        }
         this.issueSuccessRedirect(request, response);
         return false;
     }
@@ -136,5 +143,13 @@ public class FormAuthenticationFilter extends AuthenticatingFilter {
 
     protected String getPassword(ServletRequest request) {
         return WebUtils.getCleanParam(request, this.getPasswordParam());
+    }
+
+    private String getRedirectURI(ServletRequest request) {
+        return WebUtils.getCleanParam(request, OAuth.OAUTH_REDIRECT_URI);
+    }
+
+    private String getResponseType(ServletRequest request) {
+        return WebUtils.getCleanParam(request, OAuth.OAUTH_RESPONSE_TYPE);
     }
 }
