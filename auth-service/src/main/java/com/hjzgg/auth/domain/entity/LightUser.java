@@ -64,6 +64,7 @@ public class LightUser {
     }
 
     public String getRole() {
+        xixi
         return role;
     }
 
