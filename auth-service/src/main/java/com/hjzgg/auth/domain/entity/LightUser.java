@@ -73,6 +73,7 @@ public class LightUser {
 
     @Override
     public String toString() {
+        fd
         StringBuilder sb = new StringBuilder();
         sb.append(getClass().getSimpleName());
         sb.append(" [");
