@@ -34,8 +34,8 @@
       <file leaf-file-name="LightUser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/auth-service/src/main/java/com/hjzgg/auth/domain/entity/LightUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+            <state relative-caret-position="116">
+              <caret line="74" column="27" lean-forward="true" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
               <folding>
                 <element signature="e#300#301#0" expanded="true" />
                 <element signature="e#329#330#0" expanded="true" />
@@ -59,6 +59,7 @@
                 <element signature="e#1130#1131#0" expanded="true" />
                 <element signature="e#1169#1170#0" expanded="true" />
                 <element signature="e#1204#1205#0" expanded="true" />
+                <element signature="e#1376#1377#0" expanded="true" />
                 <element signature="e#1403#1404#0" expanded="true" />
                 <element signature="e#1443#1444#0" expanded="true" />
                 <element signature="e#1504#1505#0" expanded="true" />
@@ -1467,7 +1468,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159020000" />
+    <option name="totallyTimeSpent" value="159336000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1480,6 +1481,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="728" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1503,7 +1505,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861635" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4056604" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33490565" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33490565" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24313408" sideWeight="0.4918033" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32956383" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2536349" sideWeight="0.5081967" order="6" side_tool="true" content_ui="tabs" />
@@ -2069,18 +2071,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auth-service/src/main/java/com/hjzgg/auth/domain/entity/LightUser.java.orig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="71" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-service/src/main/java/com/hjzgg/auth/domain/entity/LightUser.java.orig" />
     <entry file="file://$PROJECT_DIR$/auth-service/src/main/java/com/hjzgg/auth/domain/entity/LightUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+        <state relative-caret-position="116">
+          <caret line="74" column="27" lean-forward="true" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
           <folding>
             <element signature="e#300#301#0" expanded="true" />
             <element signature="e#329#330#0" expanded="true" />
@@ -2104,6 +2099,7 @@
             <element signature="e#1130#1131#0" expanded="true" />
             <element signature="e#1169#1170#0" expanded="true" />
             <element signature="e#1204#1205#0" expanded="true" />
+            <element signature="e#1376#1377#0" expanded="true" />
             <element signature="e#1403#1404#0" expanded="true" />
             <element signature="e#1443#1444#0" expanded="true" />
             <element signature="e#1504#1505#0" expanded="true" />
