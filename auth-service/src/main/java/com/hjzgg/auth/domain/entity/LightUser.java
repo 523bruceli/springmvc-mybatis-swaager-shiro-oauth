@@ -86,7 +86,6 @@ public class LightUser {
         sb.append(", clientSecret=").append(clientSecret);
         sb.append(", role=").append(role);
         sb.append("]");
-        heahah
         return sb.toString();
     }
 }
