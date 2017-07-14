@@ -70,7 +70,6 @@ public class RenameMapperPlugin extends PluginAdapter {
         old = introspectedTable.getUpdateByExampleSelectiveStatementId();
         old = old.replace("Example", "Params");
         introspectedTable.setUpdateByExampleSelectiveStatementId(old);
-        
     }
 
     @Override

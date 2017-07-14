@@ -18,9 +18,9 @@
 
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
 
-        <!--<plugin type="com.beiquan.com.beiquan.vas.RenameMapperPlugin">
+        <plugin type="com.hjzgg.generate.RenameMapperPlugin">
         	<property name="newPostfix" value="Dao" />
-        </plugin>-->
+        </plugin>
 
         <!-- 生成文件的注释，type里写的是你的实现类的类全路径 -->
         <commentGenerator type="com.hjzgg.generate.MyCommentGenerator">
@@ -52,7 +52,7 @@
         </sqlMapGenerator>
 
         <!-- 生成Dao类存放位置 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="${service.package}" targetProject="${target.project}">
+        <javaClientGenerator type="com.hjzgg.generate.self.JavaMapperGenerator" targetPackage="${service.package}" targetProject="${target.project}">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
