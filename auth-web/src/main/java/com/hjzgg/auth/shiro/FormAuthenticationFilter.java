@@ -115,10 +115,10 @@ public class FormAuthenticationFilter extends AuthenticatingFilter {
     }
 
     protected boolean onLoginSuccess(AuthenticationToken token, Subject subject, ServletRequest request, ServletResponse response) throws Exception {
-        if(StringUtils.isNotEmpty(this.getResponseType(request)) && StringUtils.isNotEmpty(this.getRedirectURI(request))) {
+        /*if(StringUtils.isNotEmpty(this.getResponseType(request)) && StringUtils.isNotEmpty(this.getRedirectURI(request))) {
             String authorizeURI = "/oauth/authorize?";
             this.setSuccessUrl(authorizeURI + ((HttpServletRequest)request).getQueryString());
-        }
+        }*/
         this.issueSuccessRedirect(request, response);
         return false;
     }

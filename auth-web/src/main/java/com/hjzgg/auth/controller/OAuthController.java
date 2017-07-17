@@ -26,6 +26,7 @@ import org.apache.oltu.oauth2.rs.response.OAuthRSResponse;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.apache.shiro.web.util.WebUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -89,12 +90,19 @@ public class OAuthController {
             //如果用户没有登录，跳转到登陆页面
             if (!subject.isAuthenticated()) {
                 if (!login(subject, request)) {//登录失败时跳转到登陆页面
+                    //方法1
+                    //保存当前的Url， 同事修改 FormAuthenticationFilter 中的onLoginSuccess方法逻辑，注释掉相应代码，issueSuccessRedirect方法会自动重定向到我们之前save的Request对应的URL
+                    WebUtils.saveRequest(request);
                     HttpHeaders headers = new HttpHeaders();
+                    headers.setLocation(new URI(request.getContextPath() + "/login.jsp"));
+
+                    //方法2
+                    /*HttpHeaders headers = new HttpHeaders();
                     headers.setLocation(new URI(request.getContextPath() + "/login.jsp?"
                             + OAuth.OAUTH_REDIRECT_URI + "=" + redirectURI
                             + "&" + OAuth.OAUTH_RESPONSE_TYPE + "=" + responseType
                             + "&" + OAuth.OAUTH_CLIENT_ID + "=" + clientId)
-                    );
+                    );*/
                     return new ResponseEntity(headers, HttpStatus.TEMPORARY_REDIRECT);
                 }
             }
